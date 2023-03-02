@@ -87,11 +87,11 @@ const rebuildBlocks = () => {
         };
 
         selector.innerHTML = "";
-        for (let i = 0; i < mc; i++) {
+        for (let i = 0; i < mc.length; i++) {
             console.debug(mc[i]);
             selector.innerHTML = selector.innerHTML + template(mc[i]);
         }
-        for (let i = 0; i < http; i++) {
+        for (let i = 0; i < http.length; i++) {
             console.debug(http[i]);
             selector.innerHTML = selector.innerHTML + template(http[i]);
         }
