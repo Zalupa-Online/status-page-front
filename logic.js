@@ -88,9 +88,11 @@ const rebuildBlocks = () => {
 
         selector.innerHTML = "";
         for (let i = 0; i < mc; i++) {
+            console.debug(mc[i]);
             selector.innerHTML = selector.innerHTML + template(mc[i]);
         }
         for (let i = 0; i < http; i++) {
+            console.debug(http[i]);
             selector.innerHTML = selector.innerHTML + template(http[i]);
         }
     });
