@@ -79,11 +79,7 @@ const rebuildBlocks = () => {
                 <div class="col">
                     <div class="card shadow-sm">
                         <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="
-                            background: url(service_${status}_bg.png);
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                        "><title>${service.title}</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">${service.title}</text></svg>
+                            background: url(service_${status}_bg.png)"><title>${service.title}</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">${service.title}</text></svg>
                         <div class="card-body">
                             <p class="card-text">${service.latency} ms</p>
                         </div>
@@ -109,15 +105,21 @@ const rebuildBlocks = () => {
         itter(http);
 
         if (all_services > up_services) {
-            st_text.innerText = "Сейчас у Залупы проблемы"
+            st_text.innerText = "Сейчас у Залупы проблемы";
             st.style.backgroundColor = "#fb0000";
         } else {
-            st_text.innerText = "Все сервисы сейчас работают"
+            st_text.innerText = "Все сервисы сейчас работают";
             st.style.backgroundColor = "#00d047";
         }
     });
 }
 
+const hide_splash = () => {
+    document.getElementById("splash_screen").style.display = "none";
+    document.getElementById("main_screen").style.display = null;
+}
+
 window.onload = () => {
+    setTimeout(hide_splash, 4 * 1000 + 250);
     setInterval(rebuildBlocks, 1000);
 }

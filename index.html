@@ -5,119 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Состояние Залупы</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css" />
         <meta name="theme-color" content="#712cf9">
-        <style>
-            .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            }
-            @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-            }
-            }
-            .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-            }
-            .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-            }
-            .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-            }
-            .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-            }
-            .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-            }
-            ::-webkit-scrollbar {
-            width: 15px;
-            }
-            ::-webkit-scrollbar-track {
-            background: #2c2c2e;
-            }
-            ::-webkit-scrollbar-thumb {
-            background: #939393;
-            border-radius: 8px;
-            border: 4px solid #2c2c2e;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-            background: #7c7c7c;
-            }
-            .noselect {
-            user-select: none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            }
-            .splash_container {
-            width: 100%;
-            height: 50px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-left: -25%;
-            margin-top: -25px;
-            }
-            .splash_scroller {
-            height: 50px;
-            line-height: 50px;
-            float: left;
-            margin-left: 5px;
-            overflow: hidden;
-            }
-            .splash_scroller span {
-            display: block; 
-            font-size: 200%;
-            color: #fff;
-            }
-            .splash_scroller .splash_inner {
-            -webkit-animation: splash_scroll 10s 1 ease-out;
-            -moz-animation: splash_scroll 10s 1 ease-out;
-            animation: splash_scroll 10s 1 ease-out;
-            -webkit-animation-fill-mode: forwards;
-            -moz-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-            }
-            @-webkit-keyframes splash_scroll {
-            16%  {margin-top: 0px}
-            35%  {margin-top: -50px}
-            100%  {margin-top: -50px}
-            }
-            @-moz-keyframes splash_scroll {
-            16%  {margin-top: 0px}
-            35%  {margin-top: -50px}
-            100%  {margin-top: -50px}
-            }
-            @keyframes splash_scroll {
-            16%  {margin-top: 0px}
-            35%  {margin-top: -50px}
-            100%  {margin-top: -50px}
-            }
-        </style>
     </head>
     <body class="noselect">
         <div id="splash_screen">
@@ -130,60 +19,27 @@
                 </div>
             </div>
         </div>
-        <main>
-            <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">Состояние Залупы</h1>
-                        <p class="lead text-muted">На этой странице вы можете посмотреть состояние всех сервисов Залупы</p>
-                    </div>
-                </div>
-                <div id="global_status" style="
-                    background: #fb0000;
-                    padding: .4em;
-                    max-width: 400px;
-                    margin: auto;
-                    border-radius: 0.75em;
-                ">
-                <p style="
-                    margin: 0;
-                    color: #fff;
-                " id="global_status_text">Сейчас у Залупы проблемы</p>
-                </div>
-            </section>
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="status_container">
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="
-                                    background: url(service_up_bg.png);
-                                    background-position: center;
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
-                                "><title>Рабочий сервис</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">Рабочий сервис</text></svg>
-                                <div class="card-body">
-                                    <p class="card-text">По нашим наблюдениям этот сервис работает в штатном режиме.</p>
-                                </div>
-                            </div>
+        <div id="main_screen" style="display:none">
+            <main>
+                <section class="py-5 text-center container">
+                    <div class="row py-lg-5">
+                        <div class="col-lg-6 col-md-8 mx-auto">
+                            <h1 class="fw-light">Состояние Залупы</h1>
+                            <p class="lead text-muted">На этой странице вы можете посмотреть состояние всех сервисов Залупы</p>
                         </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="
-                                    background: url(service_down_bg.png);
-                                    background-position: center;
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
-                                "><title>Нерабочий сервис</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">Нерабочий сервис</text></svg>
-                                <div class="card-body">
-                                    <p class="card-text">Похоже, что сейчас этот сервис недоступен.</p>
-                                </div>
-                            </div>
+                    </div>
+                    <div id="global_status">
+                        <p id="global_status_text">Сейчас у Залупы проблемы</p>
+                    </div>
+                </section>
+                <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="status_container">
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="logic.js"></script>
     </body>
