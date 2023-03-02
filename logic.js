@@ -64,8 +64,14 @@ const rebuildBlocks = () => {
     getStatus(function(resp) {
         const selector = document.getElementById("status_container");
 
+        const st = document.getElementById("global_status");
+        const st_text = document.getElementById("global_status_text");
+
         const mc = resp.minecraft;
         const http = resp.http;
+
+        let all_services = 0;
+        let up_services = 0;
 
         const template = (service) => {
             const status = service.status ? "up" : "down";
@@ -79,21 +85,35 @@ const rebuildBlocks = () => {
                             background-size: cover;
                         "><title>${service.title}</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">${service.title}</text></svg>
                         <div class="card-body">
-                            <p class="card-text">${service.latency}</p>
+                            <p class="card-text">${service.latency} ms</p>
                         </div>
                     </div>
                 </div>
             `;
         };
 
-        selector.innerHTML = "";
-        for (let i = 0; i < mc.length; i++) {
-            console.debug(mc[i]);
-            selector.innerHTML = selector.innerHTML + template(mc[i]);
+        const itter = (arr) => {
+            for (let i = 0; i < arr.length; i++) {
+                console.debug(arr[i]);
+                all_services += 1;
+                selector.innerHTML = selector.innerHTML + template(arr[i]);
+
+                if (arr[i].status) {
+                    up_services += 1;
+                }
+            }
         }
-        for (let i = 0; i < http.length; i++) {
-            console.debug(http[i]);
-            selector.innerHTML = selector.innerHTML + template(http[i]);
+
+        selector.innerHTML = "";
+        itter(mc);
+        itter(http);
+
+        if (all_services > up_services) {
+            st_text.innerText = "Сейчас у Залупы проблемы"
+            st.style.backgroundColor = "#fb0000";
+        } else {
+            st_text.innerText = "Все сервисы сейчас работают"
+            st.style.backgroundColor = "#00d047";
         }
     });
 }
