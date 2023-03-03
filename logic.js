@@ -107,7 +107,7 @@ const rebuildBlocks = () => {
             st_text.innerText = "Сейчас у Залупы проблемы";
             st.style.backgroundColor = "#fb0000";
         } else {
-            st_text.innerText = "Все сервисы сейчас работают";
+            st_text.innerText = "Сейчас все работает нормально";
             st.style.backgroundColor = "#00d047";
         }
     });
