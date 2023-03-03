@@ -78,8 +78,10 @@ const rebuildBlocks = () => {
             return `
                 <div class="col">
                     <div class="card shadow-sm" style="background: url(service_${status}_bg.png)">
-                        <h6>${service.title}</h6>
-                        <p class="card-text">${service.latency} ms</p>
+                        <div class="data-collector">
+                            <h5 class="data-title">${service.title}</h5>
+                            <p class="card-text data-latency">${service.latency} ms</p>
+                        </div>
                     </div>
                 </div>
             `;
