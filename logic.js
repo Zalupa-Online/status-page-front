@@ -77,12 +77,9 @@ const rebuildBlocks = () => {
             const status = service.status ? "up" : "down";
             return `
                 <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="
-                            background: url(service_${status}_bg.png);height:3.5em"><title>${service.title}</title><text x="50%" y="50%" fill="#2a2a2a" dy=".3em">${service.title}</text></svg>
-                        <div class="card-body">
-                            <p class="card-text" style="text-align:right">${service.latency} ms</p>
-                        </div>
+                    <div class="card shadow-sm" style="background: url(service_${status}_bg.png)">
+                        <h6>${service.title}</h6>
+                        <p class="card-text">${service.latency} ms</p>
                     </div>
                 </div>
             `;

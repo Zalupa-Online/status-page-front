@@ -117,19 +117,18 @@
     margin: 0;
     color: #fff;
 }
+.card {
+    height: 7.5em !important;
+    border-radius: .75em !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+.card-text {
+    text-align: right !important
+}
 .col {
     filter: drop-shadow(2px 4px 32px rgba(0, 0, 0, 0.44));
-}
-
-.card {
-    border-radius: .75em !important;
-}
-
-.bd-placeholder-img {
-    border-radius: .75em .75em 0 0 !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
 }
 @media (min-width: 576px) {
     .container, .container-sm {
