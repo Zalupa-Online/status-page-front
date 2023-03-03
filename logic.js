@@ -120,6 +120,6 @@ const hide_splash = () => {
 }
 
 window.onload = () => {
-    setTimeout(hide_splash, 4 * 1000 + 250);
+    setTimeout(hide_splash, 1.6 * 1000 + 250);
     setInterval(rebuildBlocks, 1000);
 }

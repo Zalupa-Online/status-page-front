@@ -84,26 +84,26 @@
     color: #000;
 }
 .splash_scroller .splash_inner {
-    -webkit-animation: splash_scroll 10s 1 ease-out;
-    -moz-animation: splash_scroll 10s 1 ease-out;
-    animation: splash_scroll 10s 1 ease-out;
+    -webkit-animation: splash_scroll 2.5s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -moz-animation: splash_scroll 2.5s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation: splash_scroll 2.5s 1 cubic-bezier(0.18, 0.89, 0.32, 1.28);
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 @-webkit-keyframes splash_scroll {
     16%  {margin-top: 0px}
-    35%  {margin-top: -50px}
+    65%  {margin-top: -50px}
     100%  {margin-top: -50px}
 }
 @-moz-keyframes splash_scroll {
     16%  {margin-top: 0px}
-    35%  {margin-top: -50px}
+    65%  {margin-top: -50px}
     100%  {margin-top: -50px}
 }
 @keyframes splash_scroll {
     16%  {margin-top: 0px}
-    35%  {margin-top: -50px}
+    65%  {margin-top: -50px}
     100%  {margin-top: -50px}
 }
 #global_status {
