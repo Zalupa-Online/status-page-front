@@ -67,9 +67,6 @@ const rebuildBlocks = () => {
         const st = document.getElementById("global_status");
         const st_text = document.getElementById("global_status_text");
 
-        const mc = resp.minecraft;
-        const http = resp.http;
-
         let all_services = 0;
         let up_services = 0;
 
@@ -100,8 +97,9 @@ const rebuildBlocks = () => {
         }
 
         selector.innerHTML = "";
-        itter(mc);
-        itter(http);
+        itter(resp.minecraft);
+        itter(resp.ping);
+        itter(resp.http);
 
         if (all_services > up_services) {
             st_text.innerText = "Сейчас у Залупы проблемы";
